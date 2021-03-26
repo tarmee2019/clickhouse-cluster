@@ -15,8 +15,8 @@ services:
       clickhouse-network:
         ipv4_address: 172.23.0.11
     ports:
-      - "127.0.0.1:8123:8123"
-      - "127.0.0.1:9000:9000"
+      - "8123:8123"
+      - "9001:9000"
     volumes:
       - ${PWD}/clickhouse01:/etc/clickhouse-server
     depends_on:
