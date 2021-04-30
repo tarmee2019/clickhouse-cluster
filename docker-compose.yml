@@ -8,21 +8,21 @@ services:
       clickhouse-network:
         ipv4_address: 172.23.0.10
   clickhouse01:
-    image: yandex/clickhouse-server:20.4
+    image: yandex/clickhouse-server:21.3
     container_name: clickhouse01
     hostname: clickhouse01
     networks:
       clickhouse-network:
         ipv4_address: 172.23.0.11
     ports:
-      - "8123:8123"
-      - "9001:9000"
+      - "8223:8123"
+      - "9200:9000"
     volumes:
       - ${PWD}/clickhouse01:/etc/clickhouse-server
     depends_on:
       - zookeeper
   clickhouse02:
-    image: yandex/clickhouse-server:20.4
+    image: yandex/clickhouse-server:21.3
     container_name: clickhouse02
     hostname: clickhouse02
     networks:
@@ -33,7 +33,7 @@ services:
     depends_on:
       - zookeeper
   clickhouse03:
-    image: yandex/clickhouse-server:20.4
+    image: yandex/clickhouse-server:21.3
     container_name: clickhouse03
     hostname: clickhouse03
     networks:
@@ -44,7 +44,7 @@ services:
     depends_on:
       - zookeeper
   clickhouse04:
-    image: yandex/clickhouse-server:20.4
+    image: yandex/clickhouse-server:21.3
     container_name: clickhouse04
     hostname: clickhouse04
     networks:
